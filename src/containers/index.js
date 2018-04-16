@@ -27,7 +27,6 @@ export default class Main extends Component {
       r: Math.floor(Math.random() * 40) + 10,
       fill: `#${rgbHex(rc(), rc(), rc())}`
     };
-    console.log(ball)
     this.ballCollection.add(ball);
   }
 
@@ -42,8 +41,8 @@ export default class Main extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.addBall}>add ball</button>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        <button style={{width: 50, height: 50}} onClick={this.addBall}>add ball</button>
         <svg width="500" height="500">
           {
             this.state.balls.map(this.renderBall)
